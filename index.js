@@ -3,11 +3,14 @@ const SERVER_PORT = process.env.PORT || 8080;
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyparser = require("body-parser");
+const cors = require("cors");
 
 const apiRouter = require("./api");
 
 const app = express();
 const router = express.Router();
+
+app.use(cors());
 
 app.engine(
   "hbs",
